@@ -3,136 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="ZigZawer Oto Alim Satim: Hayalinizdeki lüks ve spor araçlara güvenle sahip olun. İstanbul'un en seçkin araç galerisini keşfedin.">
-    <title>ZigZawer OTO ALIM SATIM | Güven ve Prestijin Adresi</title>
+    <title>ZigZawer OTO | Başakşehir Premium Galeri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: #eee; margin: 0; scroll-behavior: smooth; }
-        
-        /* NAVİGASYON */
-        nav { background: #000; padding: 15px; position: sticky; top: 0; z-index: 100; text-align: center; border-bottom: 2px solid #ffcc00; }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; transition: 0.3s; text-transform: uppercase; font-size: 0.9em; }
-        nav a:hover { color: #ffcc00; }
-
-        /* HEADER - ZigZawer Logosu Burada */
-        header { 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            height: 450px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
+        /* 1. DERİN KARANLIK TEMA AYARLARI */
+        :root {
+            --primary: #3b82f6; /* Canlı Mavi */
+            --bg: #0f172a; /* Derin Antrasit Arka Plan */
+            --card-bg: #1e293b; /* Kart Arka Planı */
+            --text-main: #f1f5f9; /* Ana Yazı Rengi */
+            --text-dim: #94a3b8; /* Yardımcı Yazı Rengi */
+            --border: #334155; /* Kenarlık Rengi */
         }
-        .logo-text { font-size: 4em; font-weight: 900; color: #ffcc00; letter-spacing: 2px; margin: 0; text-shadow: 3px 3px 10px rgba(0,0,0,0.5); }
-        .sub-text { font-size: 1.2em; color: #fff; margin-top: 10px; border-top: 1px solid #ffcc00; padding-top: 10px; }
 
-        /* ARAMA BÖLÜMÜ */
-        .arama-bari { background: #1a1a1a; padding: 30px; text-align: center; }
-        .arama-bari input { padding: 12px; width: 300px; border-radius: 25px 0 0 25px; border: 1px solid #333; background: #222; color: white; outline: none; }
-        .arama-bari button { padding: 12px 25px; border-radius: 0 25px 25px 0; border: none; background: #ffcc00; color: #000; font-weight: bold; cursor: pointer; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* GALERİ */
-        .galeri { display: flex; flex-wrap: wrap; justify-content: center; padding: 50px; gap: 30px; }
-        .arac-karti { background: #1e1e1e; border-radius: 15px; width: 320px; transition: 0.4s; overflow: hidden; border: 1px solid #333; }
-        .arac-karti:hover { transform: translateY(-10px); border-color: #ffcc00; box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2); }
-        .arac-karti img { width: 100%; height: 220px; object-fit: cover; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 2. NAVİGASYON (Dark Glass) */
+        nav { 
+            background: rgba(15, 23, 42, 0.8); 
+            backdrop-filter: blur(12px);
+            padding: 15px 10%; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { font-size: 1.6em; font-weight: 900; color: var(--primary); letter-spacing: -2px; text-transform: uppercase; }
+        .nav-links a { text-decoration: none; color: var(--text-main); margin-left: 25px; font-weight: 600; font-size: 0.85em; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* 3. HEADER (Dark Gradient) */
+        header { 
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            padding: 120px 20px; 
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-content h1 { font-size: 4em; font-weight: 800; color: #fff; margin-bottom: 15px; letter-spacing: -2px; }
+        .header-content p { font-size: 1.2em; color: var(--text-dim); max-width: 650px; margin: 0 auto; }
+
+        /* 4. FİLTRELEME (Dark Style) */
+        .filter-section { padding: 40px 10%; text-align: center; }
+        .filter-btn { 
+            padding: 12px 28px; margin: 5px; border-radius: 50px; border: 1px solid var(--border);
+            background: var(--card-bg); color: var(--text-main); cursor: pointer; font-weight: 600; transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+
+        /* 5. ARAÇ GALERİSİ */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            padding: 0 10% 80px 10%; 
+        }
+        .car-card { 
+            background: var(--card-bg); 
+            border-radius: 24px; 
+            overflow: hidden; 
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+        .car-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .car-img { width: 100%; height: 230px; object-fit: cover; cursor: pointer; transition: 0.6s; }
+        .car-img:hover { transform: scale(1.05); }
+
+        .car-info { padding: 25px; }
+        .location-tag { font-size: 0.75em; color: var(--primary); font-weight: 800; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .car-title { font-size: 1.4em; font-weight: 700; margin-bottom: 15px; color: #fff; }
+        .price { font-size: 1.8em; font-weight: 800; color: var(--primary); margin-bottom: 20px; }
         
-        .bilgi { padding: 20px; }
-        .fiyat { color: #ffcc00; font-size: 1.5em; font-weight: bold; margin: 10px 0; }
-        .incele-btn { display: block; background: #ffcc00; color: #000; text-align: center; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .btn-detail { 
+            width: 100%; padding: 14px; border-radius: 14px; border: 1px solid var(--primary);
+            background: transparent; color: var(--primary); font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .btn-detail:hover { background: var(--primary); color: white; }
 
-        /* İLETİŞİM */
-        #iletisim { padding: 80px 20px; text-align: center; background: #121212; }
-        .form-grup { margin: 15px 0; }
-        input, textarea { width: 100%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; }
-        .gonder-btn { background: #ffcc00; color: #000; border: none; padding: 12px 40px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 1em; }
-        
-        footer { background: #000; padding: 30px; text-align: center; border-top: 1px solid #ffcc00; color: #888; }
+        /* 6. MODAL (Dark Glass) */
+        #detailModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:2000; justify-content:center; align-items:center; backdrop-filter: blur(10px); }
+        .modal-content { background: var(--card-bg); border-radius: 30px; width: 90%; max-width: 550px; position: relative; border: 1px solid var(--border); overflow: hidden; }
+        #mBigImg { width: 100%; height: 280px; object-fit: cover; border-bottom: 4px solid var(--primary); }
+        .modal-text-content { padding: 35px; }
+        .info-table { width: 100%; margin-top: 15px; border-collapse: collapse; }
+        .info-table td { padding: 12px 0; border-bottom: 1px solid #border; font-size: 0.95em; border-bottom: 1px solid var(--border); }
+        .info-table td:first-child { color: var(--text-dim); }
+        .info-table td:last-child { color: #fff; font-weight: 700; text-align: right; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%; z-index: 10;}
+
+        /* 7. İLETİŞİM FORMU (Dark Form) */
+        #iletisim { padding: 100px 10%; background: #0f172a; text-align: center; border-top: 1px solid var(--border); }
+        #iletisim h2 { color: #fff; font-weight: 800; margin-bottom: 15px; font-size: 2.5em; }
+        #iletisim p { color: var(--text-dim); margin-bottom: 50px; }
+        form { max-width: 650px; margin: 0 auto; text-align: left; }
+        input, textarea { width: 100%; padding: 18px; border-radius: 15px; border: 1px solid var(--border); background: #1e293b; color: white; font-family: inherit; margin-bottom: 20px; outline: none; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+        .gonder-btn { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 15px; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 1.1em; }
+        .gonder-btn:hover { background: #2563eb; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+        /* 8. FOOTER VE SAATLER */
+        #contact-footer-info { padding: 80px 10%; background: #020617; border-top: 1px solid var(--border); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; }
+        footer { background: #000; padding: 60px 10%; text-align: center; color: var(--text-dim); border-top: 1px solid var(--border); }
+        .social-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; }
+        .social-btn { width: 60px; height: 60px; border-radius: 20px; display: flex; justify-content: center; align-items: center; font-size: 1.6em; text-decoration: none; color: white; transition: 0.3s; }
+        .whatsapp { background: #15803d; }
+        .instagram { background: #be185d; }
+        .social-btn:hover { transform: translateY(-5px) rotate(8deg); }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#">ANASAYFA</a>
-        <a href="#galeri">ARAÇLARIMIZ</a>
-        <a href="#iletisim">İLETİŞİM</a>
-        <a href="#hakkimizda">ZIGZAWER KİMDİR?</a>
+        <div class="nav-logo">ZigZawer OTO</div>
+        <div class="nav-links">
+            <a href="#">Anasayfa</a>
+            <a href="#vitrin">Katalog</a>
+            <a href="#iletisim">İletişim</a>
+        </div>
     </nav>
 
     <header>
-        <h1 class="logo-text">ZigZawer</h1>
-        <p class="sub-text">OTO ALIM SATIM</p>
+        <div class="header-content">
+            <h1>Premium Sürüş Keyfi</h1>
+            <p>Başakşehir'in en prestijli galerisinde, her detayına hakim olduğunuz güvenilir araçlarla tanışın.</p>
+        </div>
     </header>
 
-    <div class="arama-bari">
-        <input type="text" placeholder="Model arayın (Örn: BMW)...">
-        <button>ARA</button>
+    <div class="filter-section" id="vitrin">
+        <button class="filter-btn active" onclick="filterCars('all')">Tüm Araçlar</button>
+        <button class="filter-btn" onclick="filterCars('premium')">Premium</button>
+        <button class="filter-btn" onclick="filterCars('ekonomik')">Ekonomik</button>
+        <button class="filter-btn" onclick="filterCars('ticari')">Ticari</button>
     </div>
 
-    <main id="galeri" class="galeri">
-        <article class="arac-karti">
-            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=500&q=80" alt="Siyah BMW">
-            <div class="bilgi">
-                <h3>BMW M4 Competition</h3>
-                <p>2024 • 0 KM • Otomatik</p>
-                <p class="fiyat">7.200.000 TL</p>
-                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+    <main class="gallery">
+        <article class="car-card" data-cat="premium">
+            <img class="car-img" src="https://r.resimlink.com/UVIpX_0hnNTm.png" onclick="showDetail(this.src, 'Mercedes-Benz C180', 'Luxury BlueEfficiency', '2011', '180.000', '1.228.500', 'Benzinli', 'AĞIR HASAR YOK', 'Sedan')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">Mercedes-Benz C180</h3>
+                <p class="price">1.228.500 ₺</p>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları Gör</button>
             </div>
         </article>
 
-        <article class="arac-karti">
-            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=500&q=80" alt="Kırmızı Porsche">
-            <div class="bilgi">
-                <h3>Porsche 911 Turbo S</h3>
-                <p>2023 • 2.500 KM • Benzinli</p>
-                <p class="fiyat">14.500.000 TL</p>
-                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+        <article class="car-card" data-cat="premium">
+            <img class="car-img" src="https://r.resimlink.com/wc5zlXx8bv.png" onclick="showDetail(this.src, 'BMW 3 Serisi (F30)', '320i M Sport', '2015', '112.000', '1.750.000', 'Benzinli', '12.400 ₺', 'Sedan')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">BMW 3 Serisi (F30)</h3>
+                <div class="price">1.750.000 ₺</div>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları İncele</button>
             </div>
         </article>
 
-        <article class="arac-karti">
-            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" alt="Land Rover SUV">
-            <div class="bilgi">
-                <h3>Range Rover Vogue</h3>
-                <p>2024 • 0 KM • Dizel</p>
-                <p class="fiyat">11.850.000 TL</p>
-                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+        <article class="car-card" data-cat="ekonomik">
+            <img class="car-img" src="https://r.resimlink.com/e_5nfkIVrt.png" onclick="showDetail(this.src, 'Renault Megane', '1.5 dCi Icon', '2019', '94.000', '950.000', 'Dizel', 'HATASIZ', 'Sedan')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">Renault Megane</h3>
+                <div class="price">950.000 ₺</div>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları İncele</button>
+            </div>
+        </article>
+
+        <article class="car-card" data-cat="premium">
+            <img class="car-img" src="https://r.resimlink.com/YqLFpk.png" onclick="showDetail(this.src, 'VW Scirocco', '1.4 TSI Sportline', '2013', '130.000', '1.100.000', 'Benzinli', '8.500 ₺', 'Coupe')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">VW Scirocco</h3>
+                <div class="price">1.100.000 ₺</div>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları İncele</button>
+            </div>
+        </article>
+
+        <article class="car-card" data-cat="ekonomik">
+            <img class="car-img" src="https://r.resimlink.com/nUjscKTm.png" onclick="showDetail(this.src, 'Renault Clio', '1.0 TCe Touch', '2020', '45.000', '785.000', 'Benzinli', 'HATASIZ', 'Hatchback')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">Renault Clio</h3>
+                <div class="price">785.000 ₺</div>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları İncele</button>
+            </div>
+        </article>
+
+        <article class="car-card" data-cat="ticari">
+            <img class="car-img" src="https://r.resimlink.com/Y7hIeq.png" onclick="showDetail(this.src, 'Fiat Doblo', '1.6 MultiJet', '2019', '156.000', '680.000', 'Dizel', '3.200 ₺', 'Ticari')">
+            <div class="car-info">
+                <span class="location-tag">📍 BAŞAKŞEHİR / İSTANBUL</span>
+                <h3 class="car-title">Fiat Doblo</h3>
+                <div class="price">680.000 ₺</div>
+                <button class="btn-detail" onclick="this.parentElement.previousElementSibling.click()">Detayları İncele</button>
             </div>
         </article>
     </main>
 
     <section id="iletisim">
         <h2>ZigZawer İletişim</h2>
-        <p>Araçlarımız hakkında bilgi almak için formu doldurun.</p>
-        <form>
-            <div class="form-grup"><input type="text" placeholder="Adınız Soyadınız"></div>
-            <div class="form-grup"><input type="email" placeholder="E-posta Adresiniz"></div>
-            <div class="form-grup"><textarea placeholder="Hangi araçla ilgileniyorsunuz?" rows="4"></textarea></div>
+        <p>Araçlarımız hakkında bilgi almak veya randevu oluşturmak için bize yazın.</p>
+        <form onsubmit="event.preventDefault(); alert('Mesajınız uzman ekibimize iletildi!');">
+            <input type="text" placeholder="Adınız Soyadınız" required>
+            <input type="email" placeholder="E-posta Adresiniz" required>
+            <textarea placeholder="Mesajınız veya ilgilendiğiniz araç..." rows="5" required></textarea>
             <button type="submit" class="gonder-btn">BİZE GÖNDERİN</button>
         </form>
     </section>
 
+    <section id="contact-footer-info">
+        <div class="info-grid">
+            <div>
+                <h3 style="color: #fff; margin-bottom: 25px;">KONUM BİLGİSİ</h3>
+                <p style="margin-bottom: 12px; color: var(--text-dim);"><i class="fas fa-map-marker-alt" style="width: 30px; color: var(--primary);"></i> Başakşehir 2. Kısım, İstanbul</p>
+                <p style="margin-bottom: 12px; color: var(--text-dim);"><i class="fas fa-phone" style="width: 30px; color: var(--primary);"></i> 0555 000 00 00</p>
+                <p style="color: var(--text-dim);"><i class="fas fa-envelope" style="width: 30px; color: var(--primary);"></i> info@zigzawer.com</p>
+            </div>
+            <div>
+                <h3 style="color: #fff; margin-bottom: 25px;">MESAİ SAATLERİ</h3>
+                <table style="width: 100%; color: var(--text-dim);">
+                    <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px 0;">Hafta İçi</td><td style="text-align: right; color: #fff;">09:00 - 19:00</td></tr>
+                    <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px 0;">Cumartesi</td><td style="text-align: right; color: #fff;">10:00 - 17:00</td></tr>
+                    <tr><td style="padding: 10px 0;">Pazar</td><td style="text-align: right; color: #ef4444;">Kapalı</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <footer>
+        <div class="social-links">
+            <a href="#" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="font-weight: 800; font-size: 1.8em; color: #fff; margin-bottom: 15px;">ZigZawer OTO</p>
         <p>&copy; 2026 ZigZawer OTO ALIM SATIM | Tüm Hakları Saklıdır.</p>
-        <small>Adres: Otocenter Galericiler Sitesi No: 124 İstanbul</small>
+        <small style="opacity: 0.5; display: block; margin-top: 15px;">Otocenter Galericiler Sitesi No: 124 İstanbul</small>
     </footer>
 
+    <div id="detailModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="mBigImg" src="" alt="Büyük Görsel">
+            <div class="modal-text-content">
+                <h2 id="mTitle" style="color: var(--primary); margin-bottom: 5px;">Araç Bilgileri</h2>
+                <p id="mSub" style="font-size: 0.9em; color: var(--text-dim); margin-bottom: 20px;"></p>
+                <table class="info-table">
+                    <tr><td>Model Yılı</td><td id="mYear"></td></tr>
+                    <tr><td>Kilometre</td><td id="mKM"></td></tr>
+                    <tr><td>Yakıt Türü</td><td id="mFuel"></td></tr>
+                    <tr><td>Kasa Tipi</td><td id="mBody"></td></tr>
+                    <tr><td>Konum</td><td>Başakşehir / İSTANBUL</td></tr>
+                    <tr><td>Tramer Kaydı</td><td id="mTramer" style="color: #ef4444;"></td></tr>
+                    <tr><td>Fiyat</td><td id="mPrice" style="color: var(--primary); font-size: 1.4em;"></td></tr>
+                </table>
+                <button class="btn-detail" onclick="closeModal()" style="margin-top:25px; border: none; background: #334155; color: white;">Pencereyi Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCars(cat) {
+            const cards = document.querySelectorAll('.car-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            if(event) event.target.classList.add('active');
+            cards.forEach(card => {
+                if(cat === 'all' || card.getAttribute('data-cat') === cat) card.style.display = 'block';
+                else card.style.display = 'none';
+            });
+        }
+        function showDetail(imgSrc, title, sub, year, km, price, fuel, tramer, body) {
+            document.getElementById('mBigImg').src = imgSrc;
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mSub').innerText = sub;
+            document.getElementById('mYear').innerText = year;
+            document.getElementById('mKM').innerText = km + " KM";
+            document.getElementById('mPrice').innerText = price + " ₺";
+            document.getElementById('mFuel').innerText = fuel;
+            document.getElementById('mBody').innerText = body;
+            document.getElementById('mTramer').innerText = tramer;
+            document.getElementById('detailModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() { document.getElementById('detailModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+        window.onclick = function(e) { if(e.target == document.getElementById('detailModal')) closeModal(); }
+        document.addEventListener('keydown', function(e) { if (e.key === "Escape") closeModal(); });
+    </script>
 </body>
-</html><div style="margin-top: 15px;">
-    <a href="#" style="color: #ffcc00; margin: 0 10px; text-decoration: none;">Instagram</a>
-    <a href="#" style="color: #ffcc00; margin: 0 10px; text-decoration: none;">Facebook</a>
-    <a href="https://wa.me/905551234567" style="color: #27ae60; margin: 0 10px; text-decoration: none; font-weight: bold;">WhatsApp Destek</a>
-</div><div style="margin-top: 30px; border: 1px solid #333; padding: 20px; display: inline-block; border-radius: 10px;">
-    <h4 style="color: #ffcc00;">Çalışma Saatlerimiz</h4>
-    <p>Pazartesi - Cumartesi: 09:00 - 19:00</p>
-    <p>Pazar: 11:00 - 17:00</p>
-</div><script>
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Sayfanın yenilenmesini engeller
-        alert("Teşekkürler! ZigZawer ekibi en kısa sürede sizinle iletişime geçecektir.");
-    });
-</script>
+</html>

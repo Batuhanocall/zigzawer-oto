@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="ZigZawer Oto Alim Satim: Hayalinizdeki lüks ve spor araçlara güvenle sahip olun. İstanbul'un en seçkin araç galerisini keşfedin.">
+    <title>ZigZawer OTO ALIM SATIM | Güven ve Prestijin Adresi</title>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: #eee; margin: 0; scroll-behavior: smooth; }
+        
+        /* NAVİGASYON */
+        nav { background: #000; padding: 15px; position: sticky; top: 0; z-index: 100; text-align: center; border-bottom: 2px solid #ffcc00; }
+        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; transition: 0.3s; text-transform: uppercase; font-size: 0.9em; }
+        nav a:hover { color: #ffcc00; }
+
+        /* HEADER - ZigZawer Logosu Burada */
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 450px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+        .logo-text { font-size: 4em; font-weight: 900; color: #ffcc00; letter-spacing: 2px; margin: 0; text-shadow: 3px 3px 10px rgba(0,0,0,0.5); }
+        .sub-text { font-size: 1.2em; color: #fff; margin-top: 10px; border-top: 1px solid #ffcc00; padding-top: 10px; }
+
+        /* ARAMA BÖLÜMÜ */
+        .arama-bari { background: #1a1a1a; padding: 30px; text-align: center; }
+        .arama-bari input { padding: 12px; width: 300px; border-radius: 25px 0 0 25px; border: 1px solid #333; background: #222; color: white; outline: none; }
+        .arama-bari button { padding: 12px 25px; border-radius: 0 25px 25px 0; border: none; background: #ffcc00; color: #000; font-weight: bold; cursor: pointer; }
+
+        /* GALERİ */
+        .galeri { display: flex; flex-wrap: wrap; justify-content: center; padding: 50px; gap: 30px; }
+        .arac-karti { background: #1e1e1e; border-radius: 15px; width: 320px; transition: 0.4s; overflow: hidden; border: 1px solid #333; }
+        .arac-karti:hover { transform: translateY(-10px); border-color: #ffcc00; box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2); }
+        .arac-karti img { width: 100%; height: 220px; object-fit: cover; }
+        
+        .bilgi { padding: 20px; }
+        .fiyat { color: #ffcc00; font-size: 1.5em; font-weight: bold; margin: 10px 0; }
+        .incele-btn { display: block; background: #ffcc00; color: #000; text-align: center; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+
+        /* İLETİŞİM */
+        #iletisim { padding: 80px 20px; text-align: center; background: #121212; }
+        .form-grup { margin: 15px 0; }
+        input, textarea { width: 100%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; }
+        .gonder-btn { background: #ffcc00; color: #000; border: none; padding: 12px 40px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 1em; }
+        
+        footer { background: #000; padding: 30px; text-align: center; border-top: 1px solid #ffcc00; color: #888; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">ANASAYFA</a>
+        <a href="#galeri">ARAÇLARIMIZ</a>
+        <a href="#iletisim">İLETİŞİM</a>
+        <a href="#hakkimizda">ZIGZAWER KİMDİR?</a>
+    </nav>
+
+    <header>
+        <h1 class="logo-text">ZigZawer</h1>
+        <p class="sub-text">OTO ALIM SATIM</p>
+    </header>
+
+    <div class="arama-bari">
+        <input type="text" placeholder="Model arayın (Örn: BMW)...">
+        <button>ARA</button>
+    </div>
+
+    <main id="galeri" class="galeri">
+        <article class="arac-karti">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=500&q=80" alt="Siyah BMW">
+            <div class="bilgi">
+                <h3>BMW M4 Competition</h3>
+                <p>2024 • 0 KM • Otomatik</p>
+                <p class="fiyat">7.200.000 TL</p>
+                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+            </div>
+        </article>
+
+        <article class="arac-karti">
+            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=500&q=80" alt="Kırmızı Porsche">
+            <div class="bilgi">
+                <h3>Porsche 911 Turbo S</h3>
+                <p>2023 • 2.500 KM • Benzinli</p>
+                <p class="fiyat">14.500.000 TL</p>
+                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+            </div>
+        </article>
+
+        <article class="arac-karti">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" alt="Land Rover SUV">
+            <div class="bilgi">
+                <h3>Range Rover Vogue</h3>
+                <p>2024 • 0 KM • Dizel</p>
+                <p class="fiyat">11.850.000 TL</p>
+                <a href="#" class="incele-btn">DETAYLARI İNCELE</a>
+            </div>
+        </article>
+    </main>
+
+    <section id="iletisim">
+        <h2>ZigZawer İletişim</h2>
+        <p>Araçlarımız hakkında bilgi almak için formu doldurun.</p>
+        <form>
+            <div class="form-grup"><input type="text" placeholder="Adınız Soyadınız"></div>
+            <div class="form-grup"><input type="email" placeholder="E-posta Adresiniz"></div>
+            <div class="form-grup"><textarea placeholder="Hangi araçla ilgileniyorsunuz?" rows="4"></textarea></div>
+            <button type="submit" class="gonder-btn">BİZE GÖNDERİN</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ZigZawer OTO ALIM SATIM | Tüm Hakları Saklıdır.</p>
+        <small>Adres: Otocenter Galericiler Sitesi No: 124 İstanbul</small>
+    </footer>
+
+</body>
+</html><div style="margin-top: 15px;">
+    <a href="#" style="color: #ffcc00; margin: 0 10px; text-decoration: none;">Instagram</a>
+    <a href="#" style="color: #ffcc00; margin: 0 10px; text-decoration: none;">Facebook</a>
+    <a href="https://wa.me/905551234567" style="color: #27ae60; margin: 0 10px; text-decoration: none; font-weight: bold;">WhatsApp Destek</a>
+</div><div style="margin-top: 30px; border: 1px solid #333; padding: 20px; display: inline-block; border-radius: 10px;">
+    <h4 style="color: #ffcc00;">Çalışma Saatlerimiz</h4>
+    <p>Pazartesi - Cumartesi: 09:00 - 19:00</p>
+    <p>Pazar: 11:00 - 17:00</p>
+</div><script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Sayfanın yenilenmesini engeller
+        alert("Teşekkürler! ZigZawer ekibi en kısa sürede sizinle iletişime geçecektir.");
+    });
+</script>
